@@ -14,10 +14,18 @@
   "contributes": {
     "commands": [
       {
-        "command": "html-to-scss.helloWorld",
-        "title": "Hello World"
+        "command": "extension.generateSCSS",
+        "title": "Generate SCSS from HTML"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.generateSCSS",
+          "when": "editorHasSelection && editorTextFocus"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
