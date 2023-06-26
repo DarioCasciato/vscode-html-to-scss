@@ -39,3 +39,6 @@ export function generateSCSS(htmlSnippet: string): string {
 
 	return scssCode;
 }
+
+
+//Regex for normal object opener:  <(\w+)(?:\s[^>]*?\bclass\s*=\s*["\'](\w+))?[^>]*>
