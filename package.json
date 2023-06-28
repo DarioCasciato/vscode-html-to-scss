@@ -2,6 +2,7 @@
   "name": "html-to-scss",
   "displayName": "HTML to SCSS",
   "description": "Transform your selected HTML snippet into a stunning SCSS structure with ease. Seamlessly generate clean and organized SCSS code from your HTML code, saving you precious development time.",
+  "repository": "https://github.com/DarioCasciato/vscode-html-to-scss",
   "icon": "icon.png",
   "publisher": "DarioCas",
   "version": "1.0.0",
