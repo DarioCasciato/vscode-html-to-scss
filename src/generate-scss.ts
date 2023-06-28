@@ -17,7 +17,7 @@ export function generateSCSS(htmlSnippet: string): string {
     function processElement(element: Element) {
       const { tagName, attribs, children } = element;
 
-      if (tagName) {
+      if (tagName && tagName !== 'svg') {
         const classNames = attribs.class ? attribs.class.split(' ') : [];
         const tagKey = `${tagName}.${classNames.join('.')}`;
         if (uniqueTags.has(tagKey)) {
@@ -34,7 +34,7 @@ export function generateSCSS(htmlSnippet: string): string {
           selector += `.${classNames.join('.')}`;
         }
 
-        const openingBlock = `${indent}${selector} {\n\n`;
+        const openingBlock = `${indent}${selector}\n${indent}{\n\n`;
         scssCode += openingBlock;
         openingTags.push(tagName);
         indentLevel++;
