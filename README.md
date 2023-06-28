@@ -15,6 +15,18 @@ Transform your selected HTML snippet into a stunning SCSS structure with ease. S
 3. The extension will generate the corresponding SCSS code based on the HTML structure.
 4. The SCSS code will be copied to the clipboard, ready for pasting into your scss file.
 
+## Configuration
+
+The HTML to SCSS extension provides a configuration option to customize the style of the generated SCSS code. By default, the extension uses the "Standard" style, which formats the SCSS code with opening brackets on the same line. However, you can change the output style to "Alman" where opening brackets are placed on a new line.
+
+To modify the output style:
+
+1. Open the Visual Studio Code settings (`Preferences > Settings` or `Ctrl + ,`).
+2. Search for `HTML to SCSS` in the settings search bar.
+3. Locate the `Output Style` option and select your preferred style: "standard" or "alman".
+4. The extension will generate the SCSS code according to the selected style.
+
+
 ## Repository
 
 The source code for this extension is available on [GitHub](https://github.com/DarioCasciato/vscode-html-to-scss). Contributions, bug reports, and feature requests are welcome.

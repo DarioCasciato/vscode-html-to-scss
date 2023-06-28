@@ -1,7 +1,7 @@
 import * as htmlparser2 from 'htmlparser2';
 import { DomHandler, Element } from 'domhandler';
 
-export function generateSCSS(htmlSnippet: string): string {
+export function generateSCSS(htmlSnippet: string, outputStyle: string): string {
   let scssCode = '';
   let indentLevel = 0;
   let isSelfClosing = false;
@@ -34,7 +34,13 @@ export function generateSCSS(htmlSnippet: string): string {
           selector += `.${classNames.join('.')}`;
         }
 
-        const openingBlock = `${indent}${selector}\n${indent}{\n\n`;
+        let openingBlock = '';
+        if (outputStyle === 'standard') {
+          openingBlock = `${indent}${selector} {\n\n`;
+        } else {
+          openingBlock = `${indent}${selector}\n${indent}{\n\n`;
+        }
+
         scssCode += openingBlock;
         openingTags.push(tagName);
         indentLevel++;

@@ -17,21 +17,34 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "extension.html-to-scss.generate-scss",
-        "title": "Generate SCSS from HTML"
+  "configuration": {
+    "type": "object",
+    "title": "HTML to SCSS",
+    "properties": {
+      "html-to-scss.outputStyle": {
+        "type": "string",
+        "default": "standard",
+        "enum": ["standard", "alman"],
+        "enumDescriptions": ["Standard style: .test { }", "Alman style: .test\n{ }"],
+        "description": "Select the output style for generated SCSS code."
       }
-    ],
-    "menus": {
-      "editor/context": [
-        {
-          "command": "extension.html-to-scss.generate-scss",
-          "when": "editorHasSelection && editorTextFocus"
-        }
-      ]
     }
   },
+  "commands": [
+    {
+      "command": "extension.html-to-scss.generate-scss",
+      "title": "Generate SCSS from HTML"
+    }
+  ],
+  "menus": {
+    "editor/context": [
+      {
+        "command": "extension.html-to-scss.generate-scss",
+        "when": "editorHasSelection && editorTextFocus"
+      }
+    ]
+  }
+},
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
