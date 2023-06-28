@@ -5,7 +5,7 @@ export function activate(context: vscode.ExtensionContext) {
     console.log('Congratulations, your extension "html-to-scss" is now active!');
 
     // Register the command to generate SCSS from selected HTML
-    let disposable = vscode.commands.registerCommand('extension.generateSCSS', () => {
+    let disposable = vscode.commands.registerCommand('html-to-scss.generateSCSS', () => {
         const editor = vscode.window.activeTextEditor;
         if (editor) {
             const selection = editor.selection;
@@ -19,7 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
     });
 
     // Add the command as a context menu item
-    let contextDisposable = vscode.commands.registerTextEditorCommand('extension.generateSCSSContextMenu', (textEditor: vscode.TextEditor) => {
+    let contextDisposable = vscode.commands.registerTextEditorCommand('html-to-scss.generateSCSSContextMenu', (textEditor: vscode.TextEditor) => {
         const selection = textEditor.selection;
         const htmlSnippet = textEditor.document.getText(selection);
 

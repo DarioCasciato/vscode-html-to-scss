@@ -2,6 +2,7 @@
   "name": "html-to-scss",
   "displayName": "HTML to SCSS",
   "description": "This extension allows you to select a html snippet and generate the basic SCSS structure from it",
+  "icon": "icon.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.79.0"
@@ -9,19 +10,21 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:html"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.generateSCSS",
+        "command": "html-to-scss.generateSCSS",
         "title": "Generate SCSS from HTML"
       }
     ],
     "menus": {
       "editor/context": [
         {
-          "command": "extension.generateSCSS",
+          "command": "html-to-scss.generateSCSS",
           "when": "editorHasSelection && editorTextFocus"
         }
       ]
