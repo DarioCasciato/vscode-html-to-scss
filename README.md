@@ -15,6 +15,8 @@ Transform your selected HTML snippet into a stunning SCSS structure with ease. S
 3. The extension will generate the corresponding SCSS code based on the HTML structure.
 4. The SCSS code will be copied to the clipboard, ready for pasting into your scss file.
 
+<img src="./explanation.gif" width="800">
+
 ## Configuration
 
 The HTML to SCSS extension provides a configuration option to customize the style of the generated SCSS code. By default, the extension uses the "Standard" style, which formats the SCSS code with opening brackets on the same line. However, you can change the output style to "Alman" where opening brackets are placed on a new line.
